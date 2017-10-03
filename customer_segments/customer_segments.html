@@ -11967,7 +11967,7 @@ div#notebook {
 <div class="prompt input_prompt">In&nbsp;[162]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Select three indices of your choice you wish to sample from the dataset</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Select three indices of your choice you wish to sample from the dataset</span>
 <span class="n">indices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="mi">309</span><span class="p">]</span>
 
 <span class="c1"># Create a DataFrame of the chosen samples</span>
@@ -12104,17 +12104,17 @@ Customer 3 to be Grocery store. Spending on Milk, Grocery and Detergents_Paper i
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
 <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 
-<span class="c1"># TODO: Make a copy of the DataFrame, using the &#39;drop&#39; function to drop the given feature</span>
+<span class="c1"># Make a copy of the DataFrame, using the &#39;drop&#39; function to drop the given feature</span>
 <span class="n">new_data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Grocery&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># TODO: Split the data into training and testing sets using the given feature as the target</span>
+<span class="c1"># Split the data into training and testing sets using the given feature as the target</span>
 <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">new_data</span><span class="p">,</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Grocery&#39;</span><span class="p">],</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="c1"># TODO: Create a decision tree regressor and fit it to the training set</span>
+<span class="c1"># Create a decision tree regressor and fit it to the training set</span>
 <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">regressor</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">y_train</span><span class="p">)</span>
 
-<span class="c1"># TODO: Report the score of the prediction using the testing set</span>
+<span class="c1"># Report the score of the prediction using the testing set</span>
 <span class="n">score</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">regressor</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span>
 
 <span class="k">print</span> <span class="s2">&quot;R^2 score is&quot;</span><span class="p">,</span><span class="n">score</span>
@@ -13713,11 +13713,11 @@ SUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[165]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Scale the data using the natural logarithm</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Scale the data using the natural logarithm</span>
 <span class="n">log_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 
-<span class="c1"># TODO: Scale the sample data using the natural logarithm</span>
+<span class="c1"># Scale the sample data using the natural logarithm</span>
 <span class="n">log_samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">samples</span><span class="p">)</span>
 
 <span class="c1"># Produce a scatter matrix for each pair of newly-transformed features</span>
@@ -17260,13 +17260,13 @@ Once you have performed this implementation, the dataset will be stored in the v
 <span class="c1"># For each feature find the data points with extreme high or low values</span>
 <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">log_data</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
     
-    <span class="c1"># TODO: Calculate Q1 (25th percentile of the data) for the given feature</span>
+    <span class="c1"># Calculate Q1 (25th percentile of the data) for the given feature</span>
     <span class="n">Q1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">log_data</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="mi">25</span><span class="p">)</span>
     
-    <span class="c1"># TODO: Calculate Q3 (75th percentile of the data) for the given feature</span>
+    <span class="c1"># Calculate Q3 (75th percentile of the data) for the given feature</span>
     <span class="n">Q3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">percentile</span><span class="p">(</span><span class="n">log_data</span><span class="p">[</span><span class="n">feature</span><span class="p">],</span> <span class="mi">75</span><span class="p">)</span>
     
-    <span class="c1"># TODO: Use the interquartile range to calculate an outlier step (1.5 times the interquartile range)</span>
+    <span class="c1"># Use the interquartile range to calculate an outlier step (1.5 times the interquartile range)</span>
     <span class="n">step</span> <span class="o">=</span> <span class="p">(</span><span class="n">Q3</span><span class="o">-</span><span class="n">Q1</span><span class="p">)</span><span class="o">*</span><span class="mf">1.5</span>
     
     <span class="c1"># Display the outliers</span>
@@ -17943,7 +17943,7 @@ Once you have performed this implementation, the dataset will be stored in the v
 <p><strong>Answer:</strong></p>
 <p>Processing the data using above definition of outliers shows that, all features have some outlier data. The outlier data is shown for each feature in tabular for above.</p>
 <p>Given the number of input rows, if we remove all the outlier data we detected, we might loose significant amount of input data. Though one feature show outlier data for a given row, we might have some useful information coming from remaining features. So, we should not remove all the outlier data.</p>
-<p>I have choosen 65,66,75,95,154,338 rows to be removed. These rows represent outliers for more than one feature from above rows.</p>
+<p>I have choosen 65,66,75,128,154 rows to be removed. These rows represent outliers for more than one feature from above rows.</p>
 
 </div>
 </div>
@@ -17980,11 +17980,11 @@ Once you have performed this implementation, the dataset will be stored in the v
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 
-<span class="c1"># TODO: Apply PCA by fitting the good data with the same number of dimensions as features</span>
+<span class="c1"># Apply PCA by fitting the good data with the same number of dimensions as features</span>
 <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">6</span><span class="p">)</span>
 <span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">good_data</span><span class="p">)</span>
 
-<span class="c1"># TODO: Transform log_samples using the PCA fit above</span>
+<span class="c1"># Transform log_samples using the PCA fit above</span>
 <span class="n">pca_samples</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">log_samples</span><span class="p">)</span>
 
 <span class="c1"># Generate PCA results plot</span>
@@ -18449,13 +18449,13 @@ zMzMsnCHyczMzMzMLIv/BwsRP33VigUpAAAAAElFTkSuQmCC
 <div class="prompt input_prompt">In&nbsp;[170]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Apply PCA by fitting the good data with only two dimensions</span>
+<div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Apply PCA by fitting the good data with only two dimensions</span>
 <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-<span class="c1"># TODO: Transform the good data using the PCA fit above</span>
+<span class="c1"># Transform the good data using the PCA fit above</span>
 <span class="n">reduced_data</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">good_data</span><span class="p">)</span>
 
-<span class="c1"># TODO: Transform log_samples using the PCA fit above</span>
+<span class="c1"># Transform log_samples using the PCA fit above</span>
 <span class="n">pca_samples</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">log_samples</span><span class="p">)</span>
 
 <span class="c1"># Create a DataFrame for the reduced data</span>
@@ -20860,8 +20860,7 @@ Sample point 2 predicted to be in Cluster 0
 <p>We cannot assume that change affects customer equally, since we saw that spending of customers on products varies differently from one another. We can use cutomer groups to understand the spending behaviour. For example, if we take customer segment which is restaurant, they seem to spend more on Fresh products. For such customers, we need to deliver more frequenctly. Reducing the delivery frequency might impact them negatively.</p>
 <p>Above reasoning can be supported by A/B testing as below,</p>
 <blockquote><p><strong><em>Hypothesis:</em></strong> Change in delivery service from 5 days a week to 3 days a week.</p>
-<p>Irrespective of clusters, choose 30% of customers in random who we assign to Group A and remaining belong to Group B.
-We introduce the new feature to Group A to test our hypothesis and calculate positive and negative responses. We now break positive and negative response scores based on the cluster and see which cluster has reacted positively to our change.</p>
+<p>Choose 20% of customers from each cluster. Let's call the customers we choose from cluster 0 as Group_A_0 and customers from cluster 1 as Group_A_1. And choose another 20% of the remaining customers from each cluster and call them Group_B_0 and Group_B_1 respectively. Now, introduce the change to the customers belonging to Group_A_0 and Group_A_1(in short Group_A*), while other two groups Group_B_0 and Group_B_1( in short Group_B*) use the service as is. Observe how customers in Group_A* respond to the change and compare those responses with Group_B*. Change will be introduced to the cluster whose group responds positively.</p>
 </blockquote>
 
 </div>
